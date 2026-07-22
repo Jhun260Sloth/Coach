@@ -391,17 +391,20 @@ function Toast({ toast }) {
 
 function LogoMark({ size = 30 }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 100 100" fill="none">
-      <path d="M64 14 L30 32 L30 68 L64 86 L64 68 L46 58 L46 42 L64 32 Z" fill={C.jet} />
-      <polygon points="52,6 88,6 70,26 40,26" fill={C.orange} />
-    </svg>
+    <img
+      src="logo-white.png" // or a hosted URL
+      alt="CoachLink logo"
+      style={{ width: size, height: size, objectFit: "contain" }}
+    />
   );
 }
+
+
 function Wordmark({ size = 20, dark }) {
   return (
     <span style={{ fontSize: size, fontWeight: 600, ...fDisplay }}>
-      <span style={{ color: dark ? C.white : C.jet }}>Coach</span>
-      <span style={{ color: dark ? "#B9BCC4" : C.slateLight, fontWeight: 500 }}>Link</span>
+      {/* <span style={{ color: dark ? C.white : C.jet }}>Coach</span>
+      <span style={{ color: dark ? "#B9BCC4" : C.slateLight, fontWeight: 500 }}>Link</span> */}
     </span>
   );
 }
@@ -442,10 +445,10 @@ function ScreenSplash({ nav }) {
   return (
     <div style={{ height: "100%", background: C.jet, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: 28, textAlign: "center" }}>
       <div style={{ animation: "clFadeUp .5s ease" }}>
-        <LogoMark size={64} />
+        <LogoMark size={150} />
       </div>
       <div style={{ marginTop: 18 }}><Wordmark size={26} dark /></div>
-      <div style={{ color: "#9CA0AC", fontSize: 14, marginTop: 10, lineHeight: 1.5, ...fBody }}>
+      <div style={{ color: "#9CA0AC", fontSize: 14, marginTop: 8, lineHeight: 1.5, ...fBody }}>
         Find a coach you trust, or build your coaching business — all in one place.
       </div>
       <div style={{ marginTop: 40, width: "100%" }}>
